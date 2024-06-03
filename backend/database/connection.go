@@ -1,14 +1,14 @@
-package app
+package database
 
 import (
 	"database/sql"
-	"go_auth_token/helper"
+	"go-auth-token/helper"
 	"time"
 
 	_ "github.com/go-sql-driver/mysql"
 )
 
-func NewDB() *sql.DB {
+func OpenConnection() *sql.DB {
 
 	db, err := sql.Open("mysql", "root@tcp(localhost:3306)/db_go_auth")
 	helper.PanicIfError(err)
