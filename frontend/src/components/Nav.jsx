@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 
-const Nav = (props) => {
+const Nav = ({name, setName}) => {
 
     const logout = async () => {
       await fetch('http://localhost:8000/api/logout', {
@@ -9,13 +9,12 @@ const Nav = (props) => {
           credentials: 'include',
       })
 
-      props.setName('')
+      setName('')
     }
 
+    let menu;
 
-    let menu = ''
-
-    if(props.name === '') {
+    if(name === "") {
       menu = (
         <ul className="navbar-nav me-auto mb-2 mb-md-0">
               <li className="nav-item">

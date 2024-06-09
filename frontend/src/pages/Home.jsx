@@ -1,6 +1,6 @@
-const Home = (props) => {
+const Home = ({name}) => {
     return (
-        <div>{props.name ? "hi " + props.name : "You're not logged in"}</div>
+        <div>{name ? "hi " + name : "You're not logged in"}</div>
     )
 }
 
